@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Demand Prediction | ML Project</title>
+    <meta name="description" content="A production-ready machine learning pipeline for predicting urban traffic demand.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="hero">
+        <div class="glass-nav">
+            <div class="logo">🚦 Traffic ML</div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#dataset">Dataset</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#docs">Documentation</a>
+                <a href="https://github.com/yourusername/traffic-demand-prediction" target="_blank" class="github-btn">GitHub Repo</a>
+            </nav>
+        </div>
+        
+        <div class="hero-content">
+            <div class="badge">Production Ready Pipeline</div>
+            <h1>Traffic Demand Prediction</h1>
+            <p>An advanced ensemble machine learning pipeline resolving complex temporal-spatial data shifts to accurately forecast urban traffic patterns.</p>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">LightGBM</span>
+                <span class="tech-tag">XGBoost</span>
+                <span class="tech-tag">CatBoost</span>
+            </div>
+            <a href="#architecture" class="cta-btn">Explore Architecture</a>
+        </div>
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">Project Objective</h2>
+                <div class="card">
+                    <p>The goal of this project is to accurately predict traffic demand at specific geographic locations (geohashes) and 15-minute time slots. The system learns historical patterns to forecast future demand, which is crucial for urban planning, traffic management, and dynamic resource allocation.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dataset" class="section">
+            <div class="container">
+                <h2 class="section-title">Data Insights & Size</h2>
+                <div class="grid-2">
+                    <div class="card highlight-card">
+                        <h3>Dataset Size</h3>
+                        <p class="big-number">~9.6 MB</p>
+                        <p class="sub-number">119K Records Total</p>
+                        <ul class="dataset-list">
+                            <li><code>train.csv</code>: 6.75 MB / 77,299 rows</li>
+                            <li><code>test.csv</code>: 2.87 MB / 41,778 rows</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>The Challenge</h3>
+                        <p><strong>Spatial Disjoint:</strong> Zero overlap in <code>(geohash, slot)</code> combinations between training Day 49 and testing Day 49 sets.</p>
+                        <br>
+                        <p><strong>Solution:</strong> The problem translates to learning generalizable temporal patterns from Day 48 to reliably forecast for unobserved locations on Day 49, completely mitigating data leakage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="architecture" class="section">
+            <div class="container">
+                <h2 class="section-title">Architecture & Pipeline</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <h3>1. Robust Validation</h3>
+                            <p>To mirror the real-world test distribution and prevent data leakage, models trained on Day 48 are validated on Day 49. Early stopping iterations are discovered here before full retraining.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <h3>2. Advanced Feature Engineering</h3>
+                            <p>Implemented hierarchical target encoding with spatial fallbacks (<code>geo4</code>, <code>geo5</code>), cyclical time encodings via sine/cosine for temporal continuity, and complex interaction features.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <h3>3. Optimal Blending Ensemble</h3>
+                            <p>Combines LightGBM, XGBoost, and CatBoost. Final predictions are a weighted ensemble where optimal weights are derived mathematically using the SciPy <code>minimize</code> function to maximize the validation R² score.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="docs" class="section">
+            <div class="container">
+                <h2 class="section-title">Technical Documentation</h2>
+                <div class="code-card">
+                    <div class="code-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="code-title">build_features.py</span>
+                    </div>
+                    <pre><code><span class="keyword">def</span> <span class="function">build_features</span>(target_df, source_df):
+    <span class="docstring">"""
+    Build features for target_df using statistics computed from source_df.
+    
+    CRITICAL: source_df must NOT include target_df rows to avoid leakage.
+    - For validation: source=train48, target=train49
+    - For test:       source=full train, target=test
+    
+    Parameters:
+    -----------
+    target_df : pd.DataFrame
+        The dataframe to build features for (e.g. test set).
+    source_df : pd.DataFrame
+        The dataframe to compute target encoding statistics from (e.g. train set).
+        
+    Returns:
+    --------
+    pd.DataFrame
+        The target_df with all engineered features added, including:
+        - Hierarchical Target Encodings
+        - Cyclical Time Features
+        - Demand Residuals & Ratios
+    """</span>
+    <span class="comment"># Feature engineering implementation...</span>
+    <span class="keyword">return</span> d
+</code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Developed for the Amazon ML School Application.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -10,6 +10,11 @@ A robust, production-ready machine learning pipeline for predicting urban traffi
 ## 🎯 Project Objective
 The goal of this project is to accurately predict traffic demand at specific geographic locations (geohashes) and 15-minute time slots. The system learns historical patterns to forecast future demand, which is crucial for urban planning, traffic management, and dynamic resource allocation.
 
+## 📊 Dataset Size
+* **Traffic Demand Dataset** – ~9.6 MB / ~119K records total
+  * `train.csv`: 6.75 MB / 77,299 rows
+  * `test.csv`: 2.87 MB / 41,778 rows
+
 ## 🧠 Key Data Insights & Challenges
 The primary challenge of this dataset is a structural temporal-spatial split between the training and testing sets:
 * **Temporal Shift:** The training data spans historical days (e.g., Day 48 and Day 49), while the test set is strictly derived from Day 49.
