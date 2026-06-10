@@ -16,8 +16,8 @@
                 <a href="#about">About</a>
                 <a href="#dataset">Dataset</a>
                 <a href="#architecture">Architecture</a>
-                <a href="#docs">Documentation</a>
-                <a href="https://github.com/yourusername/traffic-demand-prediction" target="_blank" class="github-btn">GitHub Repo</a>
+                <a href="docs.html">Documentation</a>
+                <a href="https://github.com/IshaanAggrawal/traffic_demand_prediction" target="_blank" class="github-btn">GitHub Repo</a>
             </nav>
         </div>
         
@@ -98,46 +98,6 @@
                             <p>Combines LightGBM, XGBoost, and CatBoost. Final predictions are a weighted ensemble where optimal weights are derived mathematically using the SciPy <code>minimize</code> function to maximize the validation R² score.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="docs" class="section">
-            <div class="container">
-                <h2 class="section-title">Technical Documentation</h2>
-                <div class="code-card">
-                    <div class="code-header">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
-                        <span class="code-title">build_features.py</span>
-                    </div>
-                    <pre><code><span class="keyword">def</span> <span class="function">build_features</span>(target_df, source_df):
-    <span class="docstring">"""
-    Build features for target_df using statistics computed from source_df.
-    
-    CRITICAL: source_df must NOT include target_df rows to avoid leakage.
-    - For validation: source=train48, target=train49
-    - For test:       source=full train, target=test
-    
-    Parameters:
-    -----------
-    target_df : pd.DataFrame
-        The dataframe to build features for (e.g. test set).
-    source_df : pd.DataFrame
-        The dataframe to compute target encoding statistics from (e.g. train set).
-        
-    Returns:
-    --------
-    pd.DataFrame
-        The target_df with all engineered features added, including:
-        - Hierarchical Target Encodings
-        - Cyclical Time Features
-        - Demand Residuals & Ratios
-    """</span>
-    <span class="comment"># Feature engineering implementation...</span>
-    <span class="keyword">return</span> d
-</code></pre>
                 </div>
             </div>
         </section>
