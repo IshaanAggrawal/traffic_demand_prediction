@@ -16,6 +16,7 @@
                 <a href="#about">About</a>
                 <a href="#dataset">Dataset</a>
                 <a href="#architecture">Architecture</a>
+                <a href="#results">Results</a>
                 <a href="docs.html">Documentation</a>
                 <a href="https://github.com/IshaanAggrawal/traffic_demand_prediction" target="_blank" class="github-btn">GitHub Repo</a>
             </nav>
@@ -97,6 +98,35 @@
                             <h3>3. Optimal Blending Ensemble</h3>
                             <p>Combines LightGBM, XGBoost, and CatBoost. Final predictions are a weighted ensemble where optimal weights are derived mathematically using the SciPy <code>minimize</code> function to maximize the validation R² score.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="results" class="section">
+            <div class="container">
+                <h2 class="section-title">Evaluation Results</h2>
+                <div class="grid-2">
+                    <div class="card highlight-card">
+                        <h3>Ensemble Metrics</h3>
+                        <ul class="dataset-list">
+                            <li><strong>R² Score:</strong> 0.5534</li>
+                            <li><strong>MAE:</strong> 0.0538</li>
+                            <li><strong>RMSE:</strong> 0.0967</li>
+                            <li><strong>Accuracy (&gt;0.5):</strong> 97.6%</li>
+                            <li><strong>F1-Score (&gt;0.5):</strong> 0.3357</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Visualizations</h3>
+                        <p>The automated training pipeline (<code>train_and_eval.py</code>) generated several key plots in the <code>metrics/</code> directory:</p>
+                        <br>
+                        <ul class="dataset-list">
+                            <li>Feature Importance</li>
+                            <li>Actual vs Predicted Scatter</li>
+                            <li>Prediction Distribution Comparison</li>
+                            <li>Residuals Plot</li>
+                        </ul>
                     </div>
                 </div>
             </div>

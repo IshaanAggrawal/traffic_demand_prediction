@@ -67,3 +67,19 @@ pip install numpy pandas matplotlib seaborn scikit-learn lightgbm xgboost catboo
 1. Place `train.csv` and `test.csv` in the appropriate data directory.
 2. Run the `traffic_demand_v2.ipynb` Jupyter Notebook.
 3. The notebook will automatically execute the leak-free feature engineering, train the baseline and gradient-boosting models, optimize the ensemble weights, and output the final `submission.csv`.
+
+## 📈 Evaluation Results (Validation Day 49)
+The final optimized ensemble models achieve the following performance metrics on the Day 49 validation set. The ensemble weight strategy chosen by SciPy optimize favored XGBoost heavily for this specific evaluation run.
+
+* **R² Score:** 0.5534
+* **MAE:** 0.0538
+* **RMSE:** 0.0967
+* **Accuracy (at >0.5 threshold):** 97.6%
+* **F1-Score (at >0.5 threshold):** 0.3357
+
+### Generated Visualizations
+We have exported standard evaluation plots in the `metrics/` folder:
+- `metrics/feature_importance.png`: Top predictive features
+- `metrics/actual_vs_predicted.png`: Actual vs Predicted Demand
+- `metrics/distribution_comparison.png`: Target vs Prediction distribution matching
+- `metrics/residuals_plot.png`: Residual errors vs Predicted values

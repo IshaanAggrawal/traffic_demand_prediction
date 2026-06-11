@@ -1,0 +1,33 @@
+LGBM_MSE: 0.009576
+LGBM_RMSE: 0.097857
+LGBM_MAE: 0.054395
+LGBM_R2: 0.543177
+LGBM_Accuracy(Threshold 0.5): 0.976372
+LGBM_F1(Threshold 0.5): 0.335714
+LGBM_Precision(Threshold 0.5): 0.940000
+LGBM_Recall(Threshold 0.5): 0.204348
+XGB_MSE: 0.009360
+XGB_RMSE: 0.096750
+XGB_MAE: 0.053890
+XGB_R2: 0.553456
+XGB_Accuracy(Threshold 0.5): 0.976372
+XGB_F1(Threshold 0.5): 0.335714
+XGB_Precision(Threshold 0.5): 0.940000
+XGB_Recall(Threshold 0.5): 0.204348
+CAT_MSE: 0.009461
+CAT_RMSE: 0.097266
+CAT_MAE: 0.053622
+CAT_R2: 0.548679
+CAT_Accuracy(Threshold 0.5): 0.976372
+CAT_F1(Threshold 0.5): 0.335714
+CAT_Precision(Threshold 0.5): 0.940000
+CAT_Recall(Threshold 0.5): 0.204348
+Ensemble_MSE: 0.009360
+Ensemble_RMSE: 0.096750
+Ensemble_MAE: 0.053890
+Ensemble_R2: 0.553456
+Ensemble_Accuracy(Threshold 0.5): 0.976372
+Ensemble_F1(Threshold 0.5): 0.335714
+Ensemble_Precision(Threshold 0.5): 0.940000
+Ensemble_Recall(Threshold 0.5): 0.204348
+Ensemble_Weights: LGB:0.00, XGB:1.00, CAT:0.00
