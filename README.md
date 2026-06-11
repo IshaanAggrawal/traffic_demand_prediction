@@ -71,11 +71,11 @@ pip install numpy pandas matplotlib seaborn scikit-learn lightgbm xgboost catboo
 ## 📈 Evaluation Results (Validation Day 49)
 The final optimized ensemble models achieve the following performance metrics on the Day 49 validation set. The ensemble weight strategy chosen by SciPy optimize favored XGBoost heavily for this specific evaluation run.
 
-* **R² Score:** 0.5534
-* **MAE:** 0.0538
-* **RMSE:** 0.0967
-* **Accuracy (at >0.5 threshold):** 97.6%
-* **F1-Score (at >0.5 threshold):** 0.3357
+* **R² Score:** 0.5760 (improved from 0.5698)
+* **MAE:** 0.0520
+* **RMSE:** 0.0942
+* **Accuracy (at >0.5 threshold):** 97.4%
+* **F1-Score (at >0.5 threshold):** 0.2375
 
 ### Generated Visualizations
 We have exported standard evaluation plots in the `metrics/` folder:

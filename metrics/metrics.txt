@@ -1,33 +1,33 @@
-LGBM_MSE: 0.009576
-LGBM_RMSE: 0.097857
-LGBM_MAE: 0.054395
-LGBM_R2: 0.543177
-LGBM_Accuracy(Threshold 0.5): 0.976372
-LGBM_F1(Threshold 0.5): 0.335714
-LGBM_Precision(Threshold 0.5): 0.940000
-LGBM_Recall(Threshold 0.5): 0.204348
-XGB_MSE: 0.009360
-XGB_RMSE: 0.096750
-XGB_MAE: 0.053890
-XGB_R2: 0.553456
-XGB_Accuracy(Threshold 0.5): 0.976372
-XGB_F1(Threshold 0.5): 0.335714
-XGB_Precision(Threshold 0.5): 0.940000
-XGB_Recall(Threshold 0.5): 0.204348
-CAT_MSE: 0.009461
-CAT_RMSE: 0.097266
-CAT_MAE: 0.053622
-CAT_R2: 0.548679
-CAT_Accuracy(Threshold 0.5): 0.976372
-CAT_F1(Threshold 0.5): 0.335714
-CAT_Precision(Threshold 0.5): 0.940000
-CAT_Recall(Threshold 0.5): 0.204348
-Ensemble_MSE: 0.009360
-Ensemble_RMSE: 0.096750
-Ensemble_MAE: 0.053890
-Ensemble_R2: 0.553456
-Ensemble_Accuracy(Threshold 0.5): 0.976372
-Ensemble_F1(Threshold 0.5): 0.335714
-Ensemble_Precision(Threshold 0.5): 0.940000
-Ensemble_Recall(Threshold 0.5): 0.204348
-Ensemble_Weights: LGB:0.00, XGB:1.00, CAT:0.00
+LGBM_MSE: 0.010322
+LGBM_RMSE: 0.101595
+LGBM_MAE: 0.055102
+LGBM_R2: 0.507606
+LGBM_Accuracy(Threshold 0.5): 0.974339
+LGBM_F1(Threshold 0.5): 0.217054
+LGBM_Precision(Threshold 0.5): 1.000000
+LGBM_Recall(Threshold 0.5): 0.121739
+XGB_MSE: 0.009936
+XGB_RMSE: 0.099680
+XGB_MAE: 0.054114
+XGB_R2: 0.525998
+XGB_Accuracy(Threshold 0.5): 0.974593
+XGB_F1(Threshold 0.5): 0.230769
+XGB_Precision(Threshold 0.5): 1.000000
+XGB_Recall(Threshold 0.5): 0.130435
+CAT_MSE: 0.008886
+CAT_RMSE: 0.094268
+CAT_MAE: 0.051999
+CAT_R2: 0.576071
+CAT_Accuracy(Threshold 0.5): 0.974721
+CAT_F1(Threshold 0.5): 0.237548
+CAT_Precision(Threshold 0.5): 1.000000
+CAT_Recall(Threshold 0.5): 0.134783
+Ensemble_MSE: 0.008886
+Ensemble_RMSE: 0.094268
+Ensemble_MAE: 0.051999
+Ensemble_R2: 0.576071
+Ensemble_Accuracy(Threshold 0.5): 0.974721
+Ensemble_F1(Threshold 0.5): 0.237548
+Ensemble_Precision(Threshold 0.5): 1.000000
+Ensemble_Recall(Threshold 0.5): 0.134783
+Ensemble_Weights: LGB:0.00, XGB:0.00, CAT:1.00
